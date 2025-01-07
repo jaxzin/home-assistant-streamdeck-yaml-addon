@@ -28,16 +28,15 @@ RUN apk --no-cache add \
     musl-dev=1.2.3-r5
 
 # Download and unzip the repository
-ARG VERSION=2024.12.10
-ARG VVERSION=v${VERSION}
+ARG VERSION=2024.7.5
 # hadolint ignore=SC2034
 RUN apk --no-cache --virtual unzipper add \
     unzip=6.0-r13 && \
     wget=1.21.4-r0 && \
-    wget -nv https://github.com/basnijholt/home-assistant-streamdeck-yaml/archive/refs/tags/${VVERSION}.zip && \
-    unzip ${VVERSION}.zip && \
+    wget -nv https://github.com/basnijholt/home-assistant-streamdeck-yaml/archive/refs/tags/${VERSION}.zip && \
+    unzip ${VERSION}.zip && \
     mv home-assistant-streamdeck-yaml-${VERSION} /app && \
-    rm ${VVERSION}.zip && \
+    rm ${VERSION}.zip && \
     apk del unzipper
 
 # Set the working directory to the repository
