@@ -20,9 +20,9 @@ RUN apk --no-cache add \
     zlib-dev=1.2.13-r0 \
     freetype-dev=2.12.1-r0 \
     libpng-dev=1.6.44-r0 \
-    libssl3=3.0.8-r0 \
-    libcrypto3=3.0.8-r0 \
-    libcurl=8.5.0-r0 \
+    libssl3 \
+    libcrypto3 \
+    libcurl \
     # Needed for pip install
     && apk add --no-cache --virtual build-deps \
     # General
