@@ -20,9 +20,6 @@ RUN apk --no-cache add \
     zlib-dev=1.2.13-r0 \
     freetype-dev=2.12.1-r0 \
     libpng-dev=1.6.44-r0 \
-    libssl3 \
-    libcrypto3 \
-    libcurl \
     # Needed for pip install
     && apk add --no-cache --virtual build-deps \
     # General
@@ -64,6 +61,32 @@ COPY --from=python-build /usr/lib /usr/lib
 
 # Copy rootfs
 COPY rootfs /
+
+RUN apk --no-cache add \
+    # Stream Deck dependencies
+    libusb=1.0.26-r0 \
+    libusb-dev=1.0.26-r0 \
+    hidapi-dev=0.12.0-r1 \
+    libffi-dev=3.4.4-r0 \
+    # Needed for cairosvg
+    cairo-dev=1.17.6-r3 \
+    # Needed for lxml
+    libxml2-dev=2.10.4-r0 \
+    libxslt-dev=1.1.37-r1 \
+    # Needed for Pillow
+    jpeg-dev=9e-r0 \
+    zlib-dev=1.2.13-r0 \
+    freetype-dev=2.12.1-r0 \
+    libpng-dev=1.6.44-r0 \
+    libssl3 \
+    libcrypto3 \
+    libcurl \
+    # Needed for pip install
+    && apk add --no-cache --virtual build-deps \
+    # General
+    gcc=12.2.1_git20220924-r4 \
+    python3-dev=3.10.15-r0 \
+    musl-dev=1.2.3-r5
 
 # Labels
 LABEL \
