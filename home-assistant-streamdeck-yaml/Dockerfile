@@ -26,7 +26,7 @@ RUN apk --no-cache add \
     gcc=12.2.1_git20220924-r4 \
     python3-dev=3.10.15-r0 \
     musl-dev=1.2.3-r5 \
-    libcurl=8.5.0-r0
+    libcurl=8.11.1-r0
 
 # Download and unzip the repository
 ARG VERSION=2024.7.5
