@@ -35,9 +35,9 @@ RUN apk --no-cache --virtual unzipper add \
     unzip=6.0-r13 && \
     wget=1.21.4-r0 && \
     wget -nv https://github.com/basnijholt/home-assistant-streamdeck-yaml/archive/refs/tags/${VVERSION}.zip && \
-    unzip ${VERSION}.zip && \
+    unzip ${VVERSION}.zip && \
     mv home-assistant-streamdeck-yaml-${VERSION} /app && \
-    rm ${VERSION}.zip && \
+    rm ${VVERSION}.zip && \
     apk del unzipper
 
 # Set the working directory to the repository
