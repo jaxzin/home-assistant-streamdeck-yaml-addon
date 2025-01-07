@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.0.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.0.0
 
 FROM python:3.12-alpine3.17 as python-build
 
@@ -61,11 +61,6 @@ COPY --from=python-build /usr/lib /usr/lib
 
 # Copy rootfs
 COPY rootfs /
-
-RUN apk --no-cache add \
-    libssl3 \
-    libcrypto3 \
-    libcurl 
 
 # Labels
 LABEL \
