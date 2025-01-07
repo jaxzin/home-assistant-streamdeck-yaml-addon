@@ -20,13 +20,13 @@ RUN apk --no-cache add \
     zlib-dev=1.2.13-r0 \
     freetype-dev=2.12.1-r0 \
     libpng-dev=1.6.44-r0 \
+    libcurl=8.11.1-r0 \
     # Needed for pip install
     && apk add --no-cache --virtual build-deps \
     # General
     gcc=12.2.1_git20220924-r4 \
     python3-dev=3.10.15-r0 \
-    musl-dev=1.2.3-r5 \
-    libcurl=8.11.1-r0
+    musl-dev=1.2.3-r5
 
 # Download and unzip the repository
 ARG VERSION=2024.7.5
